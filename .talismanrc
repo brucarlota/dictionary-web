@@ -1,0 +1,12 @@
+fileignoreconfig:
+- filename: package-lock.json
+  checksum: 90e1551218bbe5e50300b056d686c049e41d61fa8e142741662ea7944257c2d4
+- filename: src/App.jsx
+  checksum: 7603f7c755afc9624120b123ea6babc020709e3ecb1cae19dd10cc41474ef4d8
+- filename: src/components/definitionsList/DefinitionsList.jsx
+  checksum: 07e7ec19a2499f2c950aea4d434c31b4d7292d87aecbe22b49f9ef1614602747
+- filename: src/components/input/autocomplete/Autocomplete.jsx
+  checksum: 268c50e38a085ac4c3acd1edf2e427c30b4fc290875c43b4c75c21155225854d
+- filename: src/components/meaning/Meaning.jsx
+  checksum: b85e51cd49ee7ebd0c32d0091db9aafe60872a8eeb64e25d73ef5059f8982bbf
+version: "1.0"

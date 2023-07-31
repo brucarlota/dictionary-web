@@ -1,0 +1,45 @@
+import { styled } from "@mui/material";
+
+const MeaningWrapper = styled('div')(({ theme }) => ({
+  '& .meaning__partOfSpeech': {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    gap: '1.25em',
+    margin: '2.5em 0',
+
+    '& .meaning__text': {
+      fontStyle: 'italic',
+      fontSize: '1.5em',
+      fontWeight: 'normal',
+    },
+    '& .meaning__divider': {
+      display: 'flex',
+      flexWrap: 'nowrap',
+      width: '100%',
+      alignItems: 'center',
+
+      '& hr': {
+        width: '100%',
+      }
+    }
+  }, 
+  '& .meaning__title-meaning': {
+    color: '#757575',
+    fontSize: '1.25em', 
+  },
+  '& .meaning__synonyms': {
+    display: 'flex',
+    gap: '0.625em',
+
+    '& .meaning__title-synonyms': {
+      color: '#757575', 
+    },
+
+    '& .meaning__synonyms-list': {
+      color: '#A445ED',
+      fontWeight: 'bold',
+    }
+  }
+}));
+
+export default MeaningWrapper;
