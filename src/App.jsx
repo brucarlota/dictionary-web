@@ -1,31 +1,39 @@
+import { useEffect } from "react";
 import useSearch from "./hooks/useSearch";
 import { Header, Input, Container, Phonetic, Meaning } from "./components";
+import useSwitchTheme from "./hooks/useSwitchTheme";
+import { ThemeProvider, createTheme } from "@mui/material";
+import AppWrapper from "./styles/AppWrapper.styles";
 
 const App = () => {
   const { data, request } = useSearch();
+  const { theme } = useSwitchTheme();
   
   const handleSearch = async (value) => {
     await request(value);
   };
-
-  // useEffect(() => {
-  //   if (data) {
-  //   }
-  // }, [data]);
+  
+  const themeMode = createTheme({
+    palette: {
+      mode: theme,
+    }
+  });
 
   return (
-    <Container>
-      <Header></Header>
-      <Input handleSearch={handleSearch}></Input>
+    <AppWrapper theme={theme} className={theme}>
+      <Container>
+        <Header></Header>
+        <Input handleSearch={handleSearch}></Input>
 
-      {data?.map((meaning, index) => (
-        <div key={`${meaning.word}-${index}`}>          
-          <Phonetic title={meaning.word} phonetics={meaning.phonetics} />
-          <Meaning meanings={meaning.meanings}></Meaning>
-        </div>
-      ))}
+        {data?.map((meaning, index) => (
+          <div key={`${meaning.word}-${index}`}>          
+            <Phonetic title={meaning.word} phonetics={meaning.phonetics} />
+            <Meaning meanings={meaning.meanings}></Meaning>
+          </div>
+        ))}
 
-    </Container>
+      </Container>
+    </AppWrapper>
   );
 };
 
