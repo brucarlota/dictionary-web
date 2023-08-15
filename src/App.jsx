@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useSearch from "./hooks/useSearch";
 import { Header, Input, Container, Phonetic, Meaning } from "./components";
 import useSwitchTheme from "./hooks/useSwitchTheme";
@@ -31,7 +30,6 @@ const App = () => {
             <Meaning meanings={meaning.meanings}></Meaning>
           </div>
         ))}
-
       </Container>
     </AppWrapper>
   );
