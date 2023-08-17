@@ -1,25 +1,30 @@
 import useSearch from "./hooks/useSearch";
 import { Header, Input, Container, Phonetic, Meaning } from "./components";
 import useSwitchTheme from "./hooks/useSwitchTheme";
-import { ThemeProvider, createTheme } from "@mui/material";
-import AppWrapper from "./styles/AppWrapper.styles";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import useSwitchFontFamily from "./hooks/useSwitchFontFamily";
 
 const App = () => {
   const { data, request } = useSearch();
   const { theme } = useSwitchTheme();
+  const { fontFamily } = useSwitchFontFamily();
   
   const handleSearch = async (value) => {
     await request(value);
   };
-  
+
   const themeMode = createTheme({
     palette: {
       mode: theme,
+    },
+    typography: {
+      fontFamily: fontFamily,
     }
   });
 
   return (
-    <AppWrapper theme={theme} className={theme}>
+    <ThemeProvider theme={themeMode}>
+      <CssBaseline />
       <Container>
         <Header></Header>
         <Input handleSearch={handleSearch}></Input>
@@ -31,7 +36,7 @@ const App = () => {
           </div>
         ))}
       </Container>
-    </AppWrapper>
+    </ThemeProvider>
   );
 };
 

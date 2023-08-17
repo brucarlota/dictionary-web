@@ -1,4 +1,4 @@
-import { createContext, useContext, useState} from "react";
+import { createContext, useState} from "react";
 
 export const ThemeSwitchContext = createContext();
 ThemeSwitchContext.displayName = 'ThemeSwitch';
@@ -11,4 +11,4 @@ export default function ThemeSwitchProvider({ children }) {
       {children}
     </ThemeSwitchContext.Provider>
   );
-};
+}

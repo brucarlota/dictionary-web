@@ -1,4 +1,4 @@
-import {HeaderWrapper, ControlsWrapper} from "./Header.styles";
+import { HeaderWrapper, ControlsWrapper } from "./Header.styles";
 import { Switch, Autocomplete } from "../../components";
 import { Divider } from "@mui/material";
 
@@ -6,13 +6,13 @@ const Header = () => {
   return (
     <HeaderWrapper className="header">
       <div className="icon">
-        <img className="header__logo" src="/iconoir_book.png"></img>
+        <img className="header__logo" src="/images/logo.svg" alt="Dictionary App logo"></img>
       </div>
       <ControlsWrapper className="header__controls">
         <Autocomplete id="header__font"></Autocomplete>
         <Divider className="header__divider" orientation="vertical" variant="middle" flexItem />
         <Switch id="header__themeSelector"></Switch>
-        <img className="header__image-moon" src="/iconoir_half-moon.png"></img>
+        <img className="header__image-moon" src="/images/icon-moon.svg" alt="Icon moon indicates theme mode"></img>
       </ControlsWrapper>
     </HeaderWrapper>
   );
