@@ -2,9 +2,12 @@ import { useRef, useState } from "react";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Search } from "../../../icons";
 import InputWrapper from "./Input.styles";
+import useSwitchTheme from "../../../hooks/useSwitchTheme";
 
 const Input = ({ handleSearch }) => {
   const inputRef = useRef(null);
+  const { theme } = useSwitchTheme();
+
   const [value, setValue] = useState();
 
   const handleChange = (event) => {
@@ -15,7 +18,8 @@ const Input = ({ handleSearch }) => {
     handleSearch(value);
   };
 
-  return <InputWrapper
+  return <InputWrapper 
+  theme={theme}
   ref={inputRef}
   id="outlined-start-adornment"
   onChange={(e) => handleChange(e)}

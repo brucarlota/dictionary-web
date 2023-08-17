@@ -11,7 +11,7 @@ const useSwitchTheme = () => {
   return {
     theme,
     changeTheme,
-  }
+  };
 };
 
 export default useSwitchTheme;

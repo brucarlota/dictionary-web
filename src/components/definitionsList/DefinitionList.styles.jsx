@@ -1,10 +1,8 @@
 import { styled } from "@mui/material/styles";
 
-const ListWrapper = styled('ul')(({ theme }) => ({
-  color: '#A445ED',
-  
-  '& p': {
-    color: '#2D2D2D',
+const ListWrapper = styled('ul')(() => ({
+  '& li::marker': {
+    color: '#A445ED',
   }
 }));
 
