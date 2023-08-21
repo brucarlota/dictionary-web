@@ -1,8 +1,9 @@
 import useSearch from "./hooks/useSearch";
-import { Header, Input, Container, Phonetic, Meaning } from "./components";
+import { Header, Input, Container } from "./components";
 import useSwitchTheme from "./hooks/useSwitchTheme";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import useSwitchFontFamily from "./hooks/useSwitchFontFamily";
+import Definitions from "./components/definitions/Definitions";
 
 const App = () => {
   const { data, request } = useSearch();
@@ -26,15 +27,9 @@ const App = () => {
     <ThemeProvider theme={themeMode}>
       <CssBaseline />
       <Container>
-        <Header></Header>
-        <Input handleSearch={handleSearch}></Input>
-
-        {data?.map((meaning, index) => (
-          <div key={`${meaning.word}-${index}`}>          
-            <Phonetic title={meaning.word} phonetics={meaning.phonetics} />
-            <Meaning meanings={meaning.meanings}></Meaning>
-          </div>
-        ))}
+        <Header />
+        <Input handleSearch={handleSearch} />
+        {data && <Definitions data={data} />}
       </Container>
     </ThemeProvider>
   );
