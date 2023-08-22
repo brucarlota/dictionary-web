@@ -2,8 +2,9 @@ import DefinitionsList from "../definitionsList/DefinitionsList";
 import MeaningWrapper from './Meaning.styles';
 import { Typography } from '../../components';
 import { Divider } from "@mui/material";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-const Meaning = ({meanings}) => {
+const Meaning = ({meanings, source}) => {
   return (
     <MeaningWrapper>
       {meanings.map((meaning, index) => (
@@ -25,6 +26,20 @@ const Meaning = ({meanings}) => {
         </div>
       ))
     }
+    <Divider />
+      <div className="meaning__source">
+        <Typography id="meaning__title-source" variant="body1" text="Source" />
+        {source?.map((url, index) => (
+          <a 
+            className="meaning__title-sourceLink" 
+            key={`${url}-${index}`} 
+            href={`${url}`}
+            rel="noreferrer"
+            target="_blank">
+              {url}<OpenInNewIcon className="icon" />
+          </a>
+        ))}
+      </div>
     </MeaningWrapper>
   );
 };

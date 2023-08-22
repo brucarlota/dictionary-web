@@ -1,6 +1,10 @@
 import { styled } from "@mui/material";
 
-const MeaningWrapper = styled('div')(({ theme }) => ({
+const MeaningWrapper = styled('div')(() => ({
+  '& .meaning': {
+    paddingBottom: '40px',
+  },
+
   '& .meaning__partOfSpeech': {
     display: 'flex',
     flexWrap: 'nowrap',
@@ -38,8 +42,24 @@ const MeaningWrapper = styled('div')(({ theme }) => ({
     '& .meaning__synonyms-list': {
       color: '#A445ED',
       fontWeight: 'bold',
+    },
+  },
+  '& .meaning__source': {
+    paddingTop: '20px',
+    display: 'flex',
+    gap: '0.625em',
+  },
+  '& .meaning__title-sourceLink': {
+    display: 'flex',
+    color: '#A445ED',
+    alignItems: 'center',
+    gap: '0.4rem',
+
+    '& .icon': {
+      fontSize: '1.25rem',
+      display: 'flex',
     }
-  }
+  },
 }));
 
 export default MeaningWrapper;
