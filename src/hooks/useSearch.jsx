@@ -6,17 +6,21 @@ const useSearch = () => {
   const [error, setError] = useState();
  
   const request = async (word) => {
-    try {
-      await fetch(`${BASE_URL}en/${word}`)
-        .then(async (response) => {
-          if (response.ok) {
-              setData(await response.json());
-            } else {
-              setData([]);
-            }
-        });
-    } catch (error) {
-      setError(error);
+    if (word) {
+      try {
+        await fetch(`${BASE_URL}en/${word}`)
+          .then(async (response) => {
+            if (response.ok) {
+                setData(await response.json());
+              } else {
+                setData([]);
+              }
+          });
+      } catch (error) {
+        setError(error);
+      }
+    } else {
+      setData(undefined);
     }
   }; 
   return { data, request, error };

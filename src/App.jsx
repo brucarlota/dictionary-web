@@ -28,7 +28,7 @@ const App = () => {
       <CssBaseline />
       <Container>
         <Header />
-        <Input handleSearch={handleSearch} />
+        <Input id="outlined-start-adornment" handleSearch={handleSearch} />
         {data && <Definitions data={data} />}
       </Container>
     </ThemeProvider>
