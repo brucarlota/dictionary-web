@@ -1,4 +1,5 @@
-import { Typography, Phonetic, Meaning } from "../index";
+import EmptyState from "../emptyState/EmptyState";
+import { Phonetic, Meaning } from "../index";
 
 const Definitions = ({ data }) => {
   const message = "Sorry pal, we couldn't find definitions for the word you were looking for.";
@@ -15,11 +16,7 @@ const Definitions = ({ data }) => {
     );
   }
   return (
-    <div>
-      <Typography id="title" variant="h6" text="No Definitions Found"></Typography>
-      <Typography id="title" variant="body2" text={message}></Typography>
-      <Typography id="title" variant="body2" text={resolution}></Typography>
-    </div>
+    <EmptyState message={message} resolution={resolution}></EmptyState>
   );
 };
 
