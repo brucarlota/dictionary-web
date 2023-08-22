@@ -8,6 +8,11 @@ const InputWrapper = styled(TextField)(({ params }) => ({
   margin: '0 !important',
   background: params.theme === 'dark' ? '#1F1F1F' : '#F4F4F4',
 
+  '& .Mui-focused': {
+    border: '1px solid #A445ED',
+    borderRadius: '16px',
+  },
+
   '& fieldset': {
     border: 'none',
   },
