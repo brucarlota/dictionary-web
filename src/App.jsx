@@ -29,7 +29,9 @@ const App = () => {
       <Container>
         <Header />
         <Input id="outlined-start-adornment" handleSearch={handleSearch} />
-        {data && <Definitions data={data} />}
+        <main>
+          {data && <Definitions data={data} />}
+        </main>
       </Container>
     </ThemeProvider>
   );

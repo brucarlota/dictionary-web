@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <HeaderWrapper className="header">
       <div className="icon">
-        <img className="header__logo" src="/images/logo.svg" alt="Dictionary App logo"></img>
+        <a href=""><img className="header__logo" src="/images/logo.svg" alt="Dictionary App logo" /></a>
       </div>
       <ControlsWrapper className="header__controls">
         <Autocomplete id="header__font"></Autocomplete>

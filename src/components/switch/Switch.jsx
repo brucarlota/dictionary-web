@@ -11,7 +11,15 @@ const Switch = ({ id }) => {
     changeTheme(checked ? 'dark' : 'light');
   };
   
-  return <SwitchWrapper id={id} className={id} aria-label="Switch theme" onChange={handleSwitch} checked={!checked} />;
+  return (
+  <SwitchWrapper 
+    id={id} 
+    className={id}
+    onChange={handleSwitch} 
+    checked={!checked}
+    inputProps={{ 'aria-label': 'Theme Switch' }}
+    />
+  );
 };
 
 export default Switch;

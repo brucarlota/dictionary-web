@@ -19,7 +19,7 @@ const Input = ({ id, handleSearch }) => {
     setValue(event.target.value);
   };
 
-  const handleClick = () => {
+  const search = () => {
     if (value) {
       setError(false);
       handleSearch(value);
@@ -27,6 +27,10 @@ const Input = ({ id, handleSearch }) => {
       setError(true);
       handleSearch('');
     }
+  };
+
+  const handleClick = () => {
+    search();
   };
 
   return (

@@ -20,7 +20,7 @@ const Autocomplete = ({ id }) => {
     <AutoCompleteMUI
       id="disable-clearable"
       disableClearable
-      role="combobox"
+      role="scrollbar"
       className={id}
       options={fonts()}
       defaultValue={defaultValue}
