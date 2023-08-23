@@ -46,12 +46,15 @@ const MeaningWrapper = styled('div')(() => ({
   },
   '& .meaning__source': {
     paddingTop: '20px',
+    paddingBottom: '40px',
     display: 'flex',
     gap: '0.625em',
+    color: '#757575',
+    fontSize: '14px !important',
   },
   '& .meaning__title-sourceLink': {
     display: 'flex',
-    color: '#A445ED',
+    color: '#2D2D2D',
     alignItems: 'center',
     gap: '0.4rem',
 

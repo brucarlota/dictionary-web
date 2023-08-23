@@ -24,22 +24,28 @@ const Meaning = ({meanings, source}) => {
             </div>
           )}
         </div>
-      ))
-    }
-    <Divider />
-      <div className="meaning__source">
-        <Typography id="meaning__title-source" variant="body1" text="Source" />
-        {source?.map((url, index) => (
-          <a 
-            className="meaning__title-sourceLink" 
-            key={`${url}-${index}`} 
-            href={`${url}`}
-            rel="noreferrer"
-            target="_blank">
-              {url}<OpenInNewIcon className="icon" />
-          </a>
-        ))}
-      </div>
+      ))}
+      {source && 
+        (<>
+          <Divider />
+          <div className="meaning__source">
+            <Typography id="meaning__title-source" variant="body1" text="Source" />
+            {source?.map((url, index) => (
+              <>
+                <a 
+                  className="meaning__title-sourceLink" 
+                  key={`${url}-${index}`} 
+                  href={`${url}`}
+                  rel="noreferrer"
+                  target="_blank">
+                    {url}<OpenInNewIcon className="icon" />
+                </a>
+                { index < source.length - 1 && <span>|</span>}
+              </>
+            ))}
+          </div>
+        </>)
+      }
     </MeaningWrapper>
   );
 };
