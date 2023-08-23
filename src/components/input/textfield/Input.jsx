@@ -44,6 +44,7 @@ const Input = ({ id, handleSearch }) => {
         onFocus={onFocus} 
         onBlur={onBlur} 
         error={error}
+        placeholder="Search for any word…"
         InputProps={{
           endAdornment: <InputAdornment position="end" onClick={handleClick}><Search id="Input__searchIcon"/></InputAdornment>
         }}
