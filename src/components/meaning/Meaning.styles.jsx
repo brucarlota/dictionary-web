@@ -33,6 +33,7 @@ const MeaningWrapper = styled('div')(() => ({
   },
   '& .meaning__synonyms': {
     display: 'flex',
+    flexWrap: 'wrap',
     gap: '0.625em',
 
     '& .meaning__title-synonyms': {
@@ -48,6 +49,7 @@ const MeaningWrapper = styled('div')(() => ({
     paddingTop: '20px',
     paddingBottom: '40px',
     display: 'flex',
+    flexWrap: 'wrap',
     gap: '0.625em',
     color: '#757575',
     fontSize: '14px !important',
